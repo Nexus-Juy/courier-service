@@ -31,7 +31,7 @@ import java.util.UUID;
 /**
  * API REST del módulo de repartidores, en el puerto 8082.
  * <p>
- * Además del CRUD, expone {@code GET /{id}/disponibilidad}, que shipment-service consume por REST
+ * Además del CRUD, expone {@code GET /{id}/disponibilidad}, que shipment-service consume con OpenFeign
  * para validar si un repartidor puede recibir un envío.
  * </p>
  */
