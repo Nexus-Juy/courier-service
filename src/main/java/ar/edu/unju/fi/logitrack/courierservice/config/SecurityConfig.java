@@ -1,9 +1,9 @@
 package ar.edu.unju.fi.logitrack.courierservice.config;
 
-import ar.edu.unju.fi.logitrack.common.security.JwtAccessDeniedHandler;
-import ar.edu.unju.fi.logitrack.common.security.JwtAuthenticationEntryPoint;
-import ar.edu.unju.fi.logitrack.common.security.ResourceServerSecurityConfig;
-import ar.edu.unju.fi.logitrack.common.security.Roles;
+import ar.edu.unju.fi.logitrack.courierservice.security.JwtAccessDeniedHandler;
+import ar.edu.unju.fi.logitrack.courierservice.security.JwtAuthenticationEntryPoint;
+import ar.edu.unju.fi.logitrack.courierservice.security.ResourceServerSecurityConfig;
+import ar.edu.unju.fi.logitrack.courierservice.security.Roles;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -20,7 +20,7 @@ import org.springframework.security.web.SecurityFilterChain;
 /**
  * Resource server de {@code courier-service} (S2-06).
  * <p>
- * La validación del JWT, el converter de roles y las respuestas 401/403 son comunes y vienen de
+ * La validación del JWT, el converter de roles y las respuestas 401/403 viven en el paquete {@code security} y vienen de
  * {@link ResourceServerSecurityConfig}; acá solo se declara la matriz de autorización del servicio.
  * </p>
  */
