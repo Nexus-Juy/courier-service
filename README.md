@@ -7,7 +7,7 @@ FI UNJu 2026): alta, consulta, cambio de estado y disponibilidad de repartidores
 |---|---|
 | Lenguaje | Java 25 |
 | Framework | Spring Boot 4.0.9 · Spring Cloud 2025.1.1 |
-| Puerto | `8082` |
+| Puerto | `8082` (solo red interna) |
 | Base de datos | MySQL 8.4 (H2 en memoria para tests) |
 | Seguridad | JWT (HS256) emitido por `security-service` |
 | Configuración | `configserver` + repositorio `logitrack-config` (perfiles `dev` / `prod`) |
@@ -28,7 +28,7 @@ FI UNJu 2026): alta, consulta, cambio de estado y disponibilidad de repartidores
 ./mvnw spring-boot:run          # requiere configserver y MySQL levantados
 ```
 
-Swagger UI: http://localhost:8082/swagger-ui.html · Health: http://localhost:8082/actuator/health
+Swagger UI y health están disponibles solo al ejecutar el servicio desde el IDE (puerto `8082`). Desde la PC no se accede directo: en Docker este puerto no se publica y todo entra por el `api-gateway` (`http://localhost:8066`), que enruta por Eureka.
 
 ## Docker
 
